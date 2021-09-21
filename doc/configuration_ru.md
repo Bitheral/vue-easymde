@@ -46,8 +46,9 @@
 - **imageUploadFunction**: Пользовательская функция для обработки загрузки изображений. Использование этой функции сделает опции `imageMaxSize`, `imageAccept`, `imageUploadEndpoint` и `imageCSRFToken` неэффективными.
     - Функция получает файл и функции обратного вызова onSuccess и onError в качестве параметров. `onSuccess(imageUrl: string)` и `onError(errorMessage: string)`
 - **imageUploadEndpoint**: Конечная точка, в которую будут отправлены данные изображений с помощью асинхронного *POST* запроса. Сервер должен сохранить это изображение и вернуть ответ в формате json.
-     - если запрос был успешно обработан (HTTP 200-OK): `{"data": {"filePath": "<filePath>"}}`, где *filePath* относительный путь изображения;
+     - если запрос был успешно обработан (HTTP 200-OK): `{"data": {"filePath": "<filePath>"}}`, где *filePath* - путь к изображению (абсолютный, если для параметра imagePathAbsolute установлено значение true, и относительный в противном случае);
      - иначе: `{"error": "<errorCode>"}`, где *errorCode* может быть `noFileGiven` (HTTP 400), `typeNotAllowed` (HTTP 415), `fileTooLarge` (HTTP 413) or `importError` (см. *errorMessages* ниже). Нет значения по умолчанию.
+- **imagePathAbsolute**: Если установлено значение `true`, то будет обрабатывать` imageUrl` из `imageUploadFunction` и *filePath*, возвращенный из` imageUploadEndpoint`, как абсолютный, а не относительный путь, т.е. не добавлять к нему `window.location.origin`.
 - **imageCSRFToken**: CSRF-токен для включения в AJAX-вызов для загрузки изображения. Например, используется с бэкэндом Django.
 - **imageTexts**: Тексты, отображаемые пользователю (в основном в строке состояния) для функции импорта изображения, где `#image_name#`, `#image_size#` и `#image_max_size#` будут заменены их соответствующими значениями, которые могут быть использованы для настройки или интернационализации:
     - **sbInit**: Сообщение о состоянии отображается изначально, если `uploadImage` установлено как `true`. По умолчанию `Attach files by drag and dropping or pasting from clipboard.`.

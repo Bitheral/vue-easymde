@@ -1,11 +1,11 @@
 # Vue-EasyMDE
 
-> [english version](README.md)
-
 > Компонент редактора Markdown для Vue.js. Поддерживается только Vue2.x.
 
 [![npm package](https://img.shields.io/npm/v/vue-easymde.svg)](https://npmjs.org/package/vue-easymde)
 [![npm downloads](http://img.shields.io/npm/dm/vue-easymde.svg)](https://npmjs.org/package/vue-easymde)
+
+> [english version](README.md)
 
 # Пользовательские настройки
 
