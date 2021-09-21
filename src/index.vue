@@ -1,9 +1,9 @@
 <template>
   <div class="vue-easymde">
     <textarea
-      class="vue-simplemde-textarea"
+      class="vue-easymde-textarea"
       :name="name"
-      :value="value"
+      :value="modelValue"
       @input="handleInput($event.target.value)"
     />
   </div>
@@ -17,8 +17,13 @@ import marked from 'marked';
 
 export default {
   name: 'vue-easymde',
+  model: {
+    prop: 'modelValue',
+    event: 'update:modelValue',
+  },
   props: {
     value: String,
+    modelValue: String,
     name: String,
     previewClass: String,
     autoinit: {
@@ -67,14 +72,14 @@ export default {
     initialize() {
       const configs = Object.assign({
         element: this.$el.firstElementChild,
-        initialValue: this.value,
+        initialValue: this.modelValue || this.value,
         previewRender: this.previewRender,
         renderingConfig: {},
       }, this.configs);
 
-      // 同步 value 和 initialValue 的值 \ Synchronize the values of value and initialValue
+      // 同步 modelValue 和 initialValue 的值 \ Synchronize the value of modelValue and initialValue
       if (configs.initialValue) {
-        this.$emit('input', configs.initialValue);
+        this.$emit('update:modelValue', configs.initialValue);
       }
 
       // 判断是否开启代码高亮 \ Determine whether to enable code highlighting
@@ -122,7 +127,7 @@ export default {
     },
     handleInput(val) {
       this.isValueUpdateFromInner = true;
-      this.$emit('input', val);
+      this.$emit('update:modelValue', val);
     },
     handleBlur(val) {
       this.isValueUpdateFromInner = true;
@@ -133,7 +138,7 @@ export default {
     this.easymde = null;
   },
   watch: {
-    value(val) {
+    modelValue(val) {
       if (this.isValueUpdateFromInner) {
         this.isValueUpdateFromInner = false;
       } else {
@@ -145,11 +150,11 @@ export default {
 </script>
 
 <style>
-  .vue-easymde .markdown-body {
-    padding: 0.5em
-  }
+.vue-easymde .markdown-body {
+  padding: 0.5em
+}
 
-  .vue-easymde .editor-preview-active, .vue-easymde .editor-preview-active-side {
-    display: block;
-  }
+.vue-easymde .editor-preview-active, .vue-easymde .editor-preview-active-side {
+  display: block;
+}
 </style>
