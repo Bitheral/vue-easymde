@@ -2858,7 +2858,7 @@ easy-stack@1.0.1:
   resolved "https://registry.npmjs.org/easy-stack/-/easy-stack-1.0.1.tgz"
   integrity sha512-wK2sCs4feiiJeFXn3zvY0p41mdU5VUgbgs1rNsc/y5ngFUijdWd+iIN8eoyuZHKB8xN6BL4PdWmzqFmxNg6V2w==
 
-"easymde@git://github.com/Bitheral/easy-markdown-editor.git#49b51493183191379717367049c1d93809c09588":
+"easymde@git://github.com/Bitheral/easy-markdown-editor.git#2.19.1":
   version "2.19.0"
   resolved "git+ssh://git@github.com/Bitheral/easy-markdown-editor.git#49b51493183191379717367049c1d93809c09588"
   integrity sha512-qVgQoTd/eSL0yH/d0jjXfHYLuaiptvT/Ct6lWddsxMfWJgT8vi5eMHScsGDvUsT3Al5edn6+czrdRan6T+ktlw==
