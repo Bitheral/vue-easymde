@@ -1,6 +1,6 @@
 ## EasyMDE 配置
 
-- **autoDownloadFontAwesome**: 如果设置为 `true`，强制下载Font Awesome (用于图标)，如果设置为 `false`，阻止下载，默认值为 `undefined`，这将智能检查字体是否已经包括Font Awesome，然后进行相应操作。
+- **autoDownloadBootstrapIcons**: 如果设置为 `true`，强制下载Font Awesome (用于图标)，如果设置为 `false`，阻止下载，默认值为 `undefined`，这将智能检查字体是否已经包括Font Awesome，然后进行相应操作。
 - **autofocus**: 如果设置为 `true`，将自动聚焦编辑器，默认值为 `false`。
 - **autosave**: *自动保存已经输入的文本，下次打开时会进行加载，文本提交时会清空保存的内容。*
   - **enabled**: 如果设置为 `true`将自动保存输入的文本，默认值为 `false`。
