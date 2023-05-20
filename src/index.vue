@@ -13,7 +13,7 @@
 // eslint-disable-next-line import/extensions
 import EasyMDE from 'easymde';
 // eslint-disable-next-line import/extensions
-import marked from 'marked';
+import { marked } from 'marked';
 
 export default {
   name: 'vue-easymde',
