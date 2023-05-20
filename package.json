@@ -27,7 +27,7 @@
   "repository": "github:Bitheral/vue-easymde",
   "license": "MIT",
   "dependencies": {
-    "easymde": "git://github.com/Bitheral/easy-markdown-editor.git#2.19.1",
+    "easymde": "git://github.com/Bitheral/easy-markdown-editor.git#d08a32e92cbcf24bdf52215d4f36e39b0e583820",
     "marked": "^5.0.2"
   },
   "devDependencies": {
